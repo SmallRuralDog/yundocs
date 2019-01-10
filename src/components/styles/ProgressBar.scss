@@ -1,0 +1,16 @@
+.progress_bar {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  .progress_view {
+    background: #f7f7f7;
+    height: 6px;
+
+    .progress_line {
+      height: 6px;
+      background:linear-gradient(to right, blue, white);
+    }
+  }
+
+}

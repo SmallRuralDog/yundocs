@@ -1,0 +1,16 @@
+@import "../../assets/styles/colors.scss";
+.avatar-list{
+  display: inline-block;
+  .avatar-list-avatar{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid white;
+    vertical-align: middle;
+    display: inline-block;
+    margin-left: -22px;
+  }
+  .more{
+    background: #f7f7f7;
+  }
+}
