@@ -1,5 +1,5 @@
-import Taro, { Component, Config } from '@tarojs/taro'
-import { Provider } from '@tarojs/mobx'
+import Taro, {Component, Config} from '@tarojs/taro'
+import {Provider} from '@tarojs/mobx'
 import Index from './pages/index'
 
 import counterStore from './store/counter'
@@ -27,10 +27,13 @@ class App extends Component {
    */
   config: Config = {
     pages: [
-      'pages/index',
       'pages/find',
+      'pages/index',
+
       'pages/bookmark',
-      'pages/my'
+      'pages/my',
+      'pages/details',
+
     ],
     window: {
       backgroundTextStyle: 'light',
@@ -42,44 +45,48 @@ class App extends Component {
     },
     tabBar: {
       backgroundColor: '#ffffff',
-      color:'#b3b3b3',
-      selectedColor:'#0c17d8',
+      color: '#b3b3b3',
+      selectedColor: '#0c17d8',
       list: [
         {
           pagePath: 'pages/index',
           text: '首页',
-          iconPath:'./assets/images/tabbar-index.png',
-          selectedIconPath:'./assets/images/tabbar-index-select.png'
+          iconPath: './assets/images/tabbar-index.png',
+          selectedIconPath: './assets/images/tabbar-index-select.png'
         },
         {
           pagePath: 'pages/find',
           text: '发现',
-          iconPath:'./assets/images/tabbar-find.png',
-          selectedIconPath:'./assets/images/tabbar-find-select.png'
+          iconPath: './assets/images/tabbar-find.png',
+          selectedIconPath: './assets/images/tabbar-find-select.png'
         },
         {
           pagePath: 'pages/bookmark',
           text: '书签',
-          iconPath:'./assets/images/tabbar-bookmark.png',
-          selectedIconPath:'./assets/images/tabbar-bookmark-select.png'
+          iconPath: './assets/images/tabbar-bookmark.png',
+          selectedIconPath: './assets/images/tabbar-bookmark-select.png'
         },
         {
           pagePath: 'pages/my',
           text: '我的',
-          iconPath:'./assets/images/tabbar-my.png',
-          selectedIconPath:'./assets/images/tabbar-my-select.png'
+          iconPath: './assets/images/tabbar-my.png',
+          selectedIconPath: './assets/images/tabbar-my-select.png'
         }
       ]
     }
   }
 
-  componentDidMount() { }
+  componentDidMount() {
+  }
 
-  componentDidShow() { }
+  componentDidShow() {
+  }
 
-  componentDidHide() { }
+  componentDidHide() {
+  }
 
-  componentDidCatchError() { }
+  componentDidCatchError() {
+  }
 
   // 在 App 类中的 render() 函数没有实际作用
   // 请勿修改此函数

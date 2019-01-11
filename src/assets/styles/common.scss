@@ -13,11 +13,30 @@
 }
 
 .pt-10 {
-  padding-top: 20px;
+  padding-top: 30px;
 }
 
 .pb-10 {
-  padding-bottom: 20px;
+  padding-bottom: 30px;
+}
+.p-15 {
+  padding: 30px;
+}
+
+.pl-15 {
+  padding-left: 30px;
+}
+
+.pr-15 {
+  padding-right: 30px;
+}
+
+.pt-15 {
+  padding-top: 30px;
+}
+
+.pb-15 {
+  padding-bottom: 30px;
 }
 
 .m-5 {
@@ -31,10 +50,12 @@
 .mr-5 {
   margin-right: 5px;
 }
-.mt-5{
+
+.mt-5 {
   margin-top: 10px;
 }
-.mb-5{
+
+.mb-5 {
   margin-bottom: 10px;
 }
 
@@ -79,21 +100,20 @@
 }
 
 
-
 .bold {
   font-weight: bold;
 }
 
 .text-default {
-  color: #333333;
+  color:$default;
 }
 
 .text-desc {
-  color: #8c8c8c;
+  color: $desc;
 }
 
 .text-disable {
-  color: #b3b3b3;
+  color: $disable;
 }
 
 .text-primary {
@@ -134,18 +154,25 @@
 }
 
 /*************/
-.page-pd {
-  padding: 15px 30px;
-}
+
 
 .flex {
   display: flex;
+}
+.flex-w{
+  flex-wrap: wrap;
+}
+
+.flex-column{
+  @extend .flex;
+  flex-direction: column;
 }
 
 .flex-c {
   @extend .flex;
   align-items: center;
 }
+
 
 .flex-c-c {
   @extend .flex-c;
@@ -165,6 +192,7 @@
 .flex-1 {
   flex: 1;
 }
+
 .flex-2 {
   flex: 2;
 }
@@ -173,30 +201,51 @@
   flex-shrink: 0;
 }
 
-.navbar {
+
+.line-1 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.line-2 {
+  @extend .line-1;
+  -webkit-line-clamp: 2;
+}
+
+
+/**
+公共模块样式
+ */
+.page{
+
+}
+.tabs-page{
+  padding-top: $tabs-height;
+}
+
+.page-pd {
+  padding: 15px 30px;
+}
+
+
+.nav-bar {
   display: flex;
 
-  .navbar-container {
+  .nav-bar-container {
     width: 500px;
     padding: 0 20px;
     display: flex;
     align-items: center;
   }
 }
-
-.line-1 {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 1; //向显示多少行就给多大值
-  -webkit-box-orient: vertical;
+.yd-tags{
+  .yd-tag{
+    color: $primary;
+    background: $primary-bg;
+    border-color: $primary-bg;
+  }
 }
-
-.line-2 {
-  @extend .line-1;
-  -webkit-line-clamp: 2; //向显示多少行就给多大值
-}
-
-
-
 

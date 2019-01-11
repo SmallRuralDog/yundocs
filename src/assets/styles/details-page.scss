@@ -1,0 +1,31 @@
+@import "colors";
+
+.details-page {
+  padding-bottom: 130px;
+
+  .details-footer-bar {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    color: white;
+    font-weight: bold;
+    font-size: 40px;
+
+    .add-bookmark {
+      background: #43E792;
+      flex: 1;
+
+      .iconfont {
+        font-size: 40px;
+      }
+    }
+
+    .action-btn {
+      flex: 1;
+      background: $primary;
+    }
+  }
+}

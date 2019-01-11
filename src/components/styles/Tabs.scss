@@ -1,0 +1,46 @@
+@import "../../assets/styles/colors";
+
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  height: $tabs-height;
+  .tab-item {
+    display: inline-block;
+    padding: 0 20px;
+    position: relative;
+    flex: 1;
+    text-align: center;
+
+    .tab-item-name {
+      font-size: 34px;
+      line-height: $tabs-height;
+      color: $desc;
+      position: relative;
+      z-index: 2;
+    }
+
+    .active-item {
+      font-weight: bold;
+      color: $default;
+    }
+  }
+
+  .active-line {
+    height: 10px;
+    background: linear-gradient(to right, $primary, $primary-change);
+    border-radius: 4px;
+    position: absolute;
+    bottom: 18px;
+    width: 50px;
+    left: 50%;
+    margin-left: -25px;
+    z-index: 1;
+  }
+}
+.tabs-fixed{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9;
+}

@@ -1,6 +1,5 @@
 import Taro, {Component, PageConfig} from "@tarojs/taro";
-import {View, Text, Image, SwiperItem, Swiper, Progress} from '@tarojs/components'
-import NavBar from "../components/NavBar";
+import {Image, Progress, Swiper, SwiperItem, Text, View, Navigator} from '@tarojs/components'
 
 import '../assets/styles/index-page.scss'
 import ProgressBar from "../components/ProgressBar";
@@ -9,7 +8,6 @@ import AvatarList from "../components/AvatarList";
 class IndexPage extends Component {
   config: PageConfig = {
     navigationBarTitleText: '首页',
-    navigationStyle: 'custom'
   };
 
   state = {
@@ -44,6 +42,12 @@ class IndexPage extends Component {
     })
   };
 
+  onItemClick = () => {
+    Taro.navigateTo({
+      url: '/pages/details'
+    })
+  };
+
   render() {
     const {list, current} = this.state;
 
@@ -51,9 +55,11 @@ class IndexPage extends Component {
       return <SwiperItem key={index} className='swiper-item'>
         <View className={`ds-list-item ${index === 0 ? 'first' : index === list.length - 1 ? 'last' : 'center'}`}>
           <View className='cover'>
-            <Image mode='aspectFill' className='cover-img' src={item.img} lazyLoad />
+            <Navigator url={'/pages/details'}>
+              <Image mode='aspectFill' className='cover-img' src={item.img} lazyLoad />
+            </Navigator>
           </View>
-          <View className='info mt-15'>
+          <View className='info mt-15' onClick={this.onItemClick.bind(this)}>
             <View className='flex-c-sb'>
               <Text className='text-17 text-default bold line-1 title'>{item.title}</Text>
               <Text className='text-13 text-disable'>免费</Text>
@@ -70,8 +76,8 @@ class IndexPage extends Component {
 
                 </ProgressBar>
               </View>
-              <View className='flex-1 flex-s flex-c-e ml-10' style={{height:Taro.pxTransform(60)}}>
-                <AvatarList/>
+              <View className='flex-1 flex-s flex-c-e ml-10' style={{height: Taro.pxTransform(60)}}>
+                <AvatarList />
               </View>
             </View>
           </View>
@@ -80,9 +86,6 @@ class IndexPage extends Component {
     });
 
     return <View className='page index-page '>
-      <NavBar>
-        <Text className='text-24 bold text-default'>首页</Text>
-      </NavBar>
       <View className='page-pd'>
         <View className='search-view'>
           <Text className='iconfont icon-sousuo text-desc' />
@@ -110,6 +113,7 @@ class IndexPage extends Component {
           </Swiper>
         </View>
       </View>
+      <View className='page-pd' />
     </View>
   }
 }

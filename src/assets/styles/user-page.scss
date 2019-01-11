@@ -1,0 +1,43 @@
+@import "colors";
+
+.user-page {
+  background: no-repeat top;
+  background-size: 100%;
+  .invite {
+    background: #EAFEF3;
+    box-shadow: 0 0 20px #EAFEF3;
+    height: 90px;
+    border-radius: 45px;
+    padding: 0 30px;
+    color: $primary;
+    margin-top: 40px;
+
+    .icon {
+      width: 150px;
+      height: 64px;
+    }
+
+    .r-btn {
+      background: #D6EAF5;
+      color: $primary;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+    }
+  }
+
+  .menu-list-item{
+    height: 150px;
+    .icon{
+      width: 80px;
+      height: 80px;
+    }
+    .iconfont{
+      font-size: 36px;
+      color: #d0d0d0;
+    }
+  }
+}

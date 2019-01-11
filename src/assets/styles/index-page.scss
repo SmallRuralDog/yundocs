@@ -48,28 +48,33 @@
 
     .ds-list {
       height: 900px;
+      margin-bottom: 30px;
       .swiper-item {
         overflow: unset;
+        height: 900px;
       }
 
       .ds-list-item {
         padding: 15px;
-        width: 370px*1.2;
+        width: 440px;
 
         .cover {
           border-radius: 10px;
           box-shadow: 20px 20px 40px #dcdcdc;
+
           .cover-img {
-            width: 370px*1.2;
-            height: 504px*1.2;
+            width: 440px;
+            height: 440px * $cover-ratio;
             border-radius: 10px;
             vertical-align: middle;
           }
         }
+
         .info {
           display: flex;
           flex-direction: column;
-          .desc{
+
+          .desc {
             height: 80px;
             line-height: 40px;
           }

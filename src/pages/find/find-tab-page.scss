@@ -1,0 +1,23 @@
+@import "../../assets/styles/common";
+
+$banner-ratio: 128/280;
+.tab-recommend {
+  .banner {
+    height: 690px * $banner-ratio + 50;
+
+    .banner-item {
+      .banner-image {
+        width: 690px;
+        height: 690px * $banner-ratio;
+        vertical-align: middle;
+        border-radius: 10px;
+
+      }
+    }
+  }
+
+}
+
+.tab-tow {
+
+}

@@ -1,0 +1,9 @@
+.book-covers {
+  position: relative;
+  .cover {
+    border-radius: 20px;
+  }
+  .cover-box-shadow{
+    box-shadow: 20px 20px 40px #dcdcdc;
+  }
+}
