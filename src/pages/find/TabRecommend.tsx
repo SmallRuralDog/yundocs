@@ -18,7 +18,7 @@ class TabRecommend extends Component {
           <BookCover image={item} width={690} ratio={3} borderRadius={10} shadow={true} />
         </Navigator>
       </SwiperItem>
-    })
+    });
 
     return <View className='tab-recommend'>
 

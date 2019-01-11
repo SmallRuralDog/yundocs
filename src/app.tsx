@@ -27,9 +27,9 @@ class App extends Component {
    */
   config: Config = {
     pages: [
-      'pages/find',
-      'pages/index',
 
+      'pages/index',
+      'pages/find',
       'pages/bookmark',
       'pages/my',
       'pages/details',
