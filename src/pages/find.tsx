@@ -11,7 +11,6 @@ interface IProps {
 interface IState {
   tabActive: number;
 }
-
 class FindPage extends Component<IProps, IState> {
   config = {
     navigationBarTitleText: '发现'
@@ -21,7 +20,7 @@ class FindPage extends Component<IProps, IState> {
     tabActive: 1
   };
 
-  onTabClick = (tab: Itab, index: number) => {
+  onTabClick = (tab: ITab, index: number) => {
     console.log(tab);
     this.setState({
       tabActive: index

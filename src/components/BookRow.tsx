@@ -45,8 +45,8 @@ class BookRow extends Component<Interface, {}> {
           <Text className={`text-${descSize || 12} text-disable line-2 mt-5`}>{desc}</Text>
         </View>
         <view>
-          <View className='mt-5'>{this.props.renderMore}</View>
-          <View className='mt-5'>{this.props.renderFooter}</View>
+          <View className=''>{this.props.renderMore}</View>
+          <View className=''>{this.props.renderFooter}</View>
         </view>
       </FlexView>
     </FlexView>

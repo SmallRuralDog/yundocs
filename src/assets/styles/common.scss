@@ -1,5 +1,25 @@
 @import './colors.scss';
 
+.p-5 {
+  padding: 10px;
+}
+
+.pl-5 {
+  padding-left: 10px;
+}
+
+.pr-5 {
+  padding-right: 10px;
+}
+
+.pt-5 {
+  padding-top: 10px;
+}
+
+.pb-5 {
+  padding-bottom: 10px;
+}
+
 .p-10 {
   padding: 20px;
 }
@@ -13,12 +33,14 @@
 }
 
 .pt-10 {
-  padding-top: 30px;
+  padding-top: 20px;
 }
 
 .pb-10 {
-  padding-bottom: 30px;
+  padding-bottom: 20px;
 }
+
+
 .p-15 {
   padding: 30px;
 }
@@ -105,7 +127,7 @@
 }
 
 .text-default {
-  color:$default;
+  color: $default;
 }
 
 .text-desc {
@@ -118,6 +140,10 @@
 
 .text-primary {
   color: $primary;
+}
+
+.text-green {
+  color: $green;
 }
 
 .text-11 {
@@ -155,15 +181,15 @@
 
 /*************/
 
-
 .flex {
   display: flex;
 }
-.flex-w{
+
+.flex-w {
   flex-wrap: wrap;
 }
 
-.flex-column{
+.flex-column {
   @extend .flex;
   flex-direction: column;
 }
@@ -188,7 +214,8 @@
   @extend .flex-c;
   justify-content: space-between;
 }
-.flex-sb{
+
+.flex-sb {
   justify-content: space-between;
 }
 
@@ -204,7 +231,7 @@
   flex-shrink: 0;
 }
 
-.lh-1{
+.lh-1 {
   line-height: 1;
 }
 
@@ -225,10 +252,11 @@
 /**
 公共模块样式
  */
-.page{
+.page {
 
 }
-.tabs-page{
+
+.tabs-page {
   padding-top: $tabs-height;
 }
 
@@ -236,18 +264,22 @@
   padding: 15px 30px;
 }
 
-.shadow{
+.shadow {
   box-shadow: 0 0 40px #dcdcdc;
 }
-.shadow-small{
+
+.shadow-small {
   box-shadow: 0 0 30px #d9d9d9;
 }
-.shadow-l{
+
+.shadow-l {
   box-shadow: 20px 20px 40px #dcdcdc;
 }
-.radius{
+
+.radius {
   border-radius: 10px;
 }
+
 .nav-bar {
   display: flex;
 
@@ -258,11 +290,16 @@
     align-items: center;
   }
 }
-.yd-tags{
-  .yd-tag{
+
+.yd-tags {
+  display: flex;
+  .yd-tag {
     color: $primary;
     background: $primary-bg;
     border-color: $primary-bg;
+    margin-right: 5px;
   }
 }
+
+
 

@@ -19,5 +19,11 @@ $banner-ratio: 128/280;
 }
 
 .tab-tow {
+  .yd-tags {
+    @extend .yd-tags;
 
+  }
+  .yd-tag{
+    margin-right: 5px;
+  }
 }
