@@ -134,7 +134,7 @@
 
 //普通字体
 .text-15 {
-  font-size: 32px;
+  font-size: 30px;
 }
 
 .text-17 {
@@ -188,6 +188,9 @@
   @extend .flex-c;
   justify-content: space-between;
 }
+.flex-sb{
+  justify-content: space-between;
+}
 
 .flex-1 {
   flex: 1;
@@ -201,6 +204,9 @@
   flex-shrink: 0;
 }
 
+.lh-1{
+  line-height: 1;
+}
 
 .line-1 {
   overflow: hidden;
@@ -230,7 +236,18 @@
   padding: 15px 30px;
 }
 
-
+.shadow{
+  box-shadow: 0 0 40px #dcdcdc;
+}
+.shadow-small{
+  box-shadow: 0 0 30px #d9d9d9;
+}
+.shadow-l{
+  box-shadow: 20px 20px 40px #dcdcdc;
+}
+.radius{
+  border-radius: 10px;
+}
 .nav-bar {
   display: flex;
 

@@ -18,7 +18,7 @@ class FindPage extends Component<IProps, IState> {
   } as PageConfig;
 
   state: IState = {
-    tabActive: 0
+    tabActive: 1
   };
 
   onTabClick = (tab: Itab, index: number) => {

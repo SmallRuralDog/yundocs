@@ -11,7 +11,7 @@ interface IProps {
   //封面圆角
   borderRadius?: number;
   shadow?: boolean;
-  ratio: 1 | 2 | 3;
+  ratio: BookCoverRatio;
 }
 
 class BookCover extends Component<IProps, {}> {

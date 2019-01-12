@@ -3,15 +3,15 @@ import {Text, View} from "@tarojs/components";
 import './styles/Tabs.scss';
 
 interface Interface {
-  tabs: Itab[],
+  tabs: ITab[],
   active: number;
   background?: string;
-  onClick?: (tab: Itab, index: number) => void;
+  onClick?: (tab: ITab, index: number) => void;
 }
 
 class Tabs extends Component<Interface, {}> {
 
-  onClick = (tab: Itab, index: number) => {
+  onClick = (tab: ITab, index: number) => {
     const {onClick} = this.props;
     onClick && onClick(tab, index)
   };
