@@ -1,5 +1,6 @@
 @import "../../assets/styles/common";
 
+
 $banner-ratio: 128/280;
 .tab-recommend {
   .banner {
@@ -19,11 +20,43 @@ $banner-ratio: 128/280;
 }
 
 .tab-tow {
-  .yd-tags {
-    @extend .yd-tags;
 
+}
+
+.tab-three {
+
+}
+
+
+.tab-four {
+  .banner {
+    height: 690px * $banner-ratio + 50;
+
+    .banner-item {
+      .banner-image {
+        width: 690px;
+        height: 690px * $banner-ratio;
+        vertical-align: middle;
+        border-radius: 10px;
+
+      }
+    }
   }
-  .yd-tag{
-    margin-right: 5px;
+
+}
+
+.tab-six{
+  .play-icon{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+  }
+  .ppjdr-icon{
+    position: absolute;
+    background: white;
+    padding: 2px;
+    border-radius: 50%;
+    right: -10px;
+    bottom: 5px;
   }
 }

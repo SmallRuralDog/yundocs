@@ -1,13 +1,12 @@
 import Taro, {Component} from "@tarojs/taro";
 import {Navigator, Swiper, SwiperItem, Text, View} from "@tarojs/components";
 import './find-tab-page.scss';
-import {AtGrid} from "taro-ui";
 import BookCover from "../../components/BookCover";
+import Grid from "../../components/Grid";
 
 class TabRecommend extends Component {
 
   componentDidMount() {
-    console.log('12123');
   }
 
   render() {
@@ -15,7 +14,7 @@ class TabRecommend extends Component {
     const Banners = banners.map((item, index) => {
       return <SwiperItem className='banner-item' key={index}>
         <Navigator url={'/pages/details'}>
-          <BookCover image={item} width={690} ratio={3} borderRadius={10} shadow={true} />
+          <BookCover image={item} width={690} ratio={3} borderRadius={10} shadow={false} />
         </Navigator>
       </SwiperItem>
     });
@@ -30,9 +29,10 @@ class TabRecommend extends Component {
       </View>
 
       <View>
-        <AtGrid
-          hasBorder={false}
+        <Grid
           columnNum={4}
+          bold={true}
+          iconSize={0.5}
           data={
             [
               {

@@ -32,8 +32,8 @@ class TabTwo extends Component {
             {zblj.map((item, index) => {
               return <SwiperItem key={index} style={{overflow: 'unset'}}>
 
-                <View className='ml-15 mt-15  shadow-small radius'>
-                  <Navigator url={'/pages/details'} className='p-10 radius'>
+                <View className='ml-15 mt-15  shadow-small radius-small'>
+                  <Navigator url={'/pages/details'} className='p-10 radius-small'>
                     <BookRow coverWidth={150} coverRatio={1} coverBorderRadius={5} image={item.img}
                              title={`《${item.title}》`}
                              desc={item.desc}

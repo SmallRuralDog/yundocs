@@ -269,7 +269,7 @@
 }
 
 .shadow-small {
-  box-shadow: 0 0 30px #d9d9d9;
+  box-shadow: 0 0 30px #e7e7e7;
 }
 
 .shadow-l {
@@ -278,6 +278,9 @@
 
 .radius {
   border-radius: 10px;
+}
+.radius-small {
+  border-radius: 5px;
 }
 
 .nav-bar {
@@ -293,6 +296,9 @@
 
 .yd-tags {
   display: flex;
+
+}
+.page{
   .yd-tag {
     color: $primary;
     background: $primary-bg;
