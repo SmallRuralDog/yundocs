@@ -28,9 +28,10 @@
   .active-line {
     height: 10px;
     background: linear-gradient(to right, $primary, $primary-change);
-    border-radius: 4px;
+    //border-radius: 4px;
     position: absolute;
-    bottom: 18px;
+    bottom: 10px;
+    //bottom: 0;
     width: 50px;
     left: 50%;
     margin-left: -25px;
