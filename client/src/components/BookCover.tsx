@@ -11,6 +11,15 @@ interface IProps {
   //封面圆角
   borderRadius?: number;
   shadow?: boolean;
+  /**
+   * 1 ：297 / 210 书籍封面
+   * 2 ：77 / 137横向封面
+   * 3 ：128 / 280 幻灯片
+   * 4 ：78 / 280 广告横幅
+   * 5 ：1
+   * 6: 80 /108
+   *
+   */
   ratio: BookCoverRatio;
 }
 
@@ -37,6 +46,6 @@ class BookCover extends Component<IProps, {}> {
   }
 }
 
-const Ratios: number[] = [297 / 210, 77 / 137, 128 / 280, 78 / 280, 1]; //高/宽
+const Ratios: number[] = [297 / 210, 77 / 137, 128 / 280, 78 / 280, 1,80/108]; //高/宽
 
 export default BookCover;

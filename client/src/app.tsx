@@ -14,7 +14,7 @@ import './app.scss'
 
 const store = {
   counterStore
-}
+};
 
 class App extends Component {
 
@@ -27,6 +27,7 @@ class App extends Component {
    */
   config: Config = {
     pages: [
+      'pages/cart',
       'pages/find',
       'pages/index',
 
@@ -77,10 +78,10 @@ class App extends Component {
   };
 
   componentDidMount() {
-    Taro.setTabBarBadge({
+    /*Taro.setTabBarBadge({
       index: 3,
       text: '100'
-    })
+    })*/
   }
 
   componentDidShow() {

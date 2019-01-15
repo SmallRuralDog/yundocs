@@ -138,6 +138,13 @@
   color: $disable;
 }
 
+.text-warning  {
+  color: $warning;
+}
+.text-danger  {
+  color: $danger;
+}
+
 .text-primary {
   color: $primary;
 }
@@ -231,6 +238,13 @@
   flex-shrink: 0;
 }
 
+.position-bottom{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
 .lh-1 {
   line-height: 1;
 }
@@ -248,6 +262,138 @@
   -webkit-line-clamp: 2;
 }
 
+/*水平线*/
+.aui-hr {
+  width: 100%;
+  position: relative;
+  height: 1px;
+}
+.aui-hr:after {
+  height: 1px;
+  background-color: #dddddd;
+  display: block;
+  content: '';
+  position: absolute;
+  top: auto;
+  right: auto;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  -webkit-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+  pointer-events: none;
+}
+/*边框样式*/
+.aui-border-t,
+.aui-border-b,
+.aui-border-l,
+.aui-border-r,
+.aui-border-tb,
+.aui-border {
+  position: relative;
+}
+.aui-border-l:before,
+.aui-border-r:after {
+  width: 1px;
+  height: 100%;
+  background-color: $border-color;
+  display: block;
+  content: '';
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  bottom: auto;
+  -webkit-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+  pointer-events: none;
+}
+.aui-border-t:before,
+.aui-border-b:after {
+  width: 100%;
+  height: 1px;
+  background-color: $border-color;
+  display: block;
+  content: '';
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  right: auto;
+  -webkit-transform-origin: 100% 50%;
+  transform-origin: 100% 50%;
+  pointer-events: none;
+}
+.aui-border-l:before {
+  right: auto;
+  left: 0;
+}
+.aui-border-r:after {
+  right: 0;
+  left: auto;
+}
+.aui-border-t:before {
+  bottom: auto;
+  top: 0;
+}
+.aui-border-b:after {
+  bottom: 0;
+  top: auto;
+}
+.aui-border:after {
+  display: block;
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: auto;
+  left: 0;
+  right: auto;
+  -webkit-transform-origin: 0 0;
+  -webkit-transform: scale(1);
+  pointer-events: none;
+  border: 1px solid $border-color;
+}
+@media screen and (-webkit-min-device-pixel-ratio:1.5) {
+  .aui-border:after {
+    right: -100%;
+    bottom: -100%;
+    -webkit-transform: scale(0.5);
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5) {
+  .aui-border-r:after,
+  .aui-border-l:before  {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+  .aui-border-t:before,
+  .aui-border-b:after  {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+  .aui-border-r:after,
+  .aui-border-l:before {
+    -webkit-transform: scaleX(0.5);
+    transform: scaleX(0.5);
+  }
+  .aui-border-t:before,
+  .aui-border-b:after  {
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 3) {
+  .aui-border-r:after,
+  .aui-border-l:before {
+    -webkit-transform: scaleX(0.333);
+    transform: scaleX(0.333);
+  }
+  .aui-border-t:before,
+  .aui-border-b:after  {
+    -webkit-transform: scaleY(0.333);
+    transform: scaleY(0.333);
+  }
+}
 
 /**
 公共模块样式
@@ -262,6 +408,10 @@
 
 .page-pd {
   padding: 15px 30px;
+}
+
+.white-bg{
+  background: white;
 }
 
 .shadow {
@@ -298,6 +448,7 @@
   display: flex;
 
 }
+/**/
 .page{
   .yd-tag {
     color: $primary;
@@ -305,6 +456,13 @@
     border-color: $primary-bg;
     margin-right: 5px;
   }
+  .at-button--primary {
+    background-color:$primary;
+    color:#fff;
+    border:1PX solid $primary-change;
+
+  }
+
 }
 
 
