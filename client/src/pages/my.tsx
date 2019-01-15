@@ -5,8 +5,7 @@ import NavBar from "../components/NavBar";
 import '../assets/styles/user-page.scss';
 // @ts-ignore
 import IconInvite from '../assets/images/icon_invite.png'
-// @ts-ignore
-import my_page_top_bg from '../assets/images/my_page_top_bg.png'
+
 
 class MyPage extends Component {
   config = {
@@ -14,8 +13,10 @@ class MyPage extends Component {
     navigationStyle: 'custom'
   } as PageConfig;
 
+
   render() {
-    return <View className='page user-page' style={{backgroundImage: `url(${my_page_top_bg})`}}>
+    return <View className='page user-page'
+                 style={{backgroundImage: `url(http://makefriends.bs2dl.yy.com/my_page_top_bg.png)`}}>
       <NavBar />
       <View className='flex-c page-pd'>
         <View className='flex-1 flex-column '>
