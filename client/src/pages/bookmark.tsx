@@ -1,6 +1,7 @@
 import Taro, {Component, PageConfig} from "@tarojs/taro";
 import {View} from '@tarojs/components'
 import Tabs from "../components/Tabs";
+import PageView from "./Page";
 
 interface IProps {
 
@@ -26,15 +27,17 @@ class BookmarkPage extends Component<IProps, IState> {
 
   render() {
     const {tabActive} = this.state;
-    return <View>
-      <Tabs
-        tabs={[
-          {name: '阅读记录'}, {name: '我的关注'}, {name: '电子书'}, {name: '订阅专栏'}
-        ]}
-        active={tabActive}
-        onClick={this.onTabClick}
-      />
-    </View>
+    return <PageView>
+      <View>
+        <Tabs
+          tabs={[
+            {name: '阅读记录'}, {name: '我的关注'}, {name: '电子书'}, {name: '订阅专栏'}
+          ]}
+          active={tabActive}
+          onClick={this.onTabClick}
+        />
+      </View>
+    </PageView>
   }
 }
 

@@ -7,6 +7,7 @@ import TabThree from "./find/TabThree";
 import TabFour from "./find/TabFour";
 import TabFive from "./find/TabFive";
 import TabSix from "./find/TabSix";
+import PageView from "./Page";
 
 interface IProps {
 
@@ -15,6 +16,7 @@ interface IProps {
 interface IState {
   tabActive: number;
 }
+
 class FindPage extends Component<IProps, IState> {
   config = {
     navigationBarTitleText: '发现'
@@ -33,24 +35,25 @@ class FindPage extends Component<IProps, IState> {
 
   render() {
     const {tabActive} = this.state;
-    return <View className='page find-page tabs-page'>
-
-      <Tabs
-        tabs={[
-          {name: '推荐'}, {name: '图书'}, {name: '文档'}, {name: '教程'}, {name: '资源'}, {name: '讨论'}
-        ]}
-        active={tabActive}
-        onClick={this.onTabClick}
-      />
-      <View>
-        {tabActive === 0 && <TabRecommend />}
-        {tabActive === 1 && <TabTwo />}
-        {tabActive === 2 && <TabThree />}
-        {tabActive === 3 && <TabFour />}
-        {tabActive === 4 && <TabFive />}
-        {tabActive === 5 && <TabSix />}
+    return <PageView>
+      <View className='page find-page tabs-page'>
+        <Tabs
+          tabs={[
+            {name: '推荐'}, {name: '图书'}, {name: '文档'}, {name: '教程'}, {name: '资源'}, {name: '讨论'}
+          ]}
+          active={tabActive}
+          onClick={this.onTabClick}
+        />
+        <View>
+          {tabActive === 0 && <TabRecommend />}
+          {tabActive === 1 && <TabTwo />}
+          {tabActive === 2 && <TabThree />}
+          {tabActive === 3 && <TabFour />}
+          {tabActive === 4 && <TabFive />}
+          {tabActive === 5 && <TabSix />}
+        </View>
       </View>
-    </View>
+    </PageView>
   }
 }
 

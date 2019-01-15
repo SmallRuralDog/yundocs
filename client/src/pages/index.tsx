@@ -1,11 +1,12 @@
 import Taro, {Component, PageConfig} from "@tarojs/taro";
-import {Image, Progress, Swiper, SwiperItem, Text, View, Navigator} from '@tarojs/components'
+import {Image, Navigator, Progress, Swiper, SwiperItem, Text, View} from '@tarojs/components'
 
 import '../assets/styles/index-page.scss'
 import ProgressBar from "../components/ProgressBar";
 import AvatarList from "../components/AvatarList";
 import {AtIcon} from "taro-ui";
 import YdConfig from "../YdConfig";
+import PageView from "./Page";
 
 class IndexPage extends Component {
   config: PageConfig = {
@@ -86,36 +87,39 @@ class IndexPage extends Component {
         </View>
       </SwiperItem>
     });
-    return <View className='page index-page '>
-      <View className='page-pd'>
-        <View className='search-view '>
-          <AtIcon prefixClass='icon' value='sousuo' className='ml-10 text-desc' size={18} />
-          <Text className='text-desc text-15 ml-10'>PHP从入门到放弃</Text>
-        </View>
-      </View>
-      <View className='daily-special'>
+    return <PageView>
+      <View className='page index-page'>
         <View className='page-pd'>
-          <View className='ds-title'><Text className='text-default text-20'>每日推荐</Text></View>
-          <View className='progress-view'>
-            <Text className='number-text text-12 text-desc'><Text
-              className='text-15 bold text-default'>{current + 1}</Text><Text
-              className='ml-5 mr-5'>/</Text>{list.length}</Text>
-            <View className='progress-bar'>
-              <Progress percent={(current + 1) / list.length * 100} activeColor={YdConfig.color.primary} strokeWidth={3}
-                        backgroundColor='f7f7f7' active activeMode='forwards' />
-            </View>
-
+          <View className='search-view '>
+            <AtIcon prefixClass='icon' value='sousuo' className='ml-10 text-desc' size={18} />
+            <Text className='text-desc text-15 ml-10'>PHP从入门到放弃</Text>
           </View>
         </View>
-        <View className='mt-10 b-10'>
-          <Swiper className='ds-list ' displayMultipleItems={1} nextMargin={Taro.pxTransform(240)}
-                  skipHiddenItemLayout={true} onChange={this.onChange} duration={200}>
-            {ListItems}
-          </Swiper>
+        <View className='daily-special'>
+          <View className='page-pd'>
+            <View className='ds-title'><Text className='text-default text-20'>每日推荐</Text></View>
+            <View className='progress-view'>
+              <Text className='number-text text-12 text-desc'><Text
+                className='text-15 bold text-default'>{current + 1}</Text><Text
+                className='ml-5 mr-5'>/</Text>{list.length}</Text>
+              <View className='progress-bar'>
+                <Progress percent={(current + 1) / list.length * 100} activeColor={YdConfig.color.primary}
+                          strokeWidth={3}
+                          backgroundColor='f7f7f7' active activeMode='forwards' />
+              </View>
+
+            </View>
+          </View>
+          <View className='mt-10 b-10'>
+            <Swiper className='ds-list ' displayMultipleItems={1} nextMargin={Taro.pxTransform(240)}
+                    skipHiddenItemLayout={true} onChange={this.onChange} duration={200}>
+              {ListItems}
+            </Swiper>
+          </View>
         </View>
+        <View className='page-pd' />
       </View>
-      <View className='page-pd' />
-    </View>
+    </PageView>
   }
 }
 
