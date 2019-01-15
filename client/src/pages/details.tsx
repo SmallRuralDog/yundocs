@@ -1,7 +1,7 @@
 import Taro, {Component, PageConfig} from "@tarojs/taro";
-import {View, Text} from "@tarojs/components";
+import {Navigator, Text, View} from "@tarojs/components";
 import BookCover from "../components/BookCover";
-import {AtTag, AtRate, AtAvatar} from "taro-ui";
+import {AtAvatar, AtIcon, AtRate, AtTag} from "taro-ui";
 import '../assets/styles/details-page.scss';
 
 class DetailsPage extends Component {
@@ -46,7 +46,7 @@ class DetailsPage extends Component {
           <Text className='bold'>用户评分4.6</Text>
           <View className='text-13 text-desc flex-c-c'>
             <Text className='mr-5'>查看更多</Text>
-            <Text className='iconfont icon-right' />
+            <AtIcon prefixClass='icon' value='right' size={12} />
           </View>
         </View>
         <View>
@@ -75,8 +75,10 @@ class DetailsPage extends Component {
 
 
       <View className='details-footer-bar'>
-        <View className='add-bookmark flex-c-c'><Text className='iconfont icon-plus' /><Text>加入书架</Text></View>
-        <View className='action-btn flex-c-c'><Text>开始听书</Text></View>
+        <View className='add-bookmark flex-c-c'><AtIcon prefixClass='icon' value='plus' /><Text>加入书架</Text></View>
+        <Navigator url={'/pages/cart'} className='action-btn flex-c-c'>
+          <View><Text>开始听书</Text></View>
+        </Navigator>
       </View>
     </View>
   }

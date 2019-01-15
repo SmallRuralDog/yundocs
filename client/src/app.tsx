@@ -27,13 +27,12 @@ class App extends Component {
    */
   config: Config = {
     pages: [
-      'pages/cart',
-      'pages/find',
       'pages/index',
-
+      'pages/find',
       'pages/bookmark',
       'pages/my',
       'pages/details',
+      'pages/cart',
 
     ],
     window: {
