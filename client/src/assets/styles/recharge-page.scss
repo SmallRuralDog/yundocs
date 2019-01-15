@@ -1,0 +1,25 @@
+@import "colors";
+
+.recharge-page {
+  min-height: 100vh;
+  .r-list{
+    .r-item{
+      padding: 30px 0;
+      border-radius: 10px;
+      border: 1Px solid $primary;
+    }
+    .r-item-active{
+      background: $primary-deep;
+      border: 1Px solid $primary-deep;
+      color: white;
+      .price{
+
+      }
+      .value{
+        color: white;
+      }
+    }
+  }
+}
+
+

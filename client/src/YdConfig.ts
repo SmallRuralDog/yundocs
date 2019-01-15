@@ -1,9 +1,12 @@
 export default {
   color: {
-    primary: '#0c17d8',
+    primary: '#3b86fd',
+    primaryDeep: '#506db6',
+    primaryChange: '#6aa9ff',
     success: '#3be88e',
     danger: '#f44f4d',
-    warning: '#d4b17f'
+    warning: '#ead1a6',
+    page_bg: '#f5f5f5'
   }
 
 }

@@ -5,6 +5,7 @@ import '../assets/styles/index-page.scss'
 import ProgressBar from "../components/ProgressBar";
 import AvatarList from "../components/AvatarList";
 import {AtIcon} from "taro-ui";
+import YdConfig from "../YdConfig";
 
 class IndexPage extends Component {
   config: PageConfig = {
@@ -100,7 +101,7 @@ class IndexPage extends Component {
               className='text-15 bold text-default'>{current + 1}</Text><Text
               className='ml-5 mr-5'>/</Text>{list.length}</Text>
             <View className='progress-bar'>
-              <Progress percent={(current + 1) / list.length * 100} activeColor='#0c17d8' strokeWidth={3}
+              <Progress percent={(current + 1) / list.length * 100} activeColor={YdConfig.color.primary} strokeWidth={3}
                         backgroundColor='f7f7f7' active activeMode='forwards' />
             </View>
 

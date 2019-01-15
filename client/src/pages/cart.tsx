@@ -9,13 +9,14 @@ import YdConfig from "../YdConfig";
 class CartPage extends Component {
 
   config: PageConfig = {
-    navigationBarTitleText: '订单确认'
+    navigationBarTitleText: '订单确认',
+    backgroundColor:YdConfig.color.page_bg,
   };
 
   render() {
     return <View className='page cart-page'>
       <View className='page-pd'>
-        <FlexView className='white-bg mt-15 p-15 radius' direction={"column"}>
+        <FlexView className='white-bg mt-15 p-15 radius shadow-small' direction={"column"}>
           <FlexView>
             <BookCover
               image={'http://img11.360buyimg.com/da/jfs/t1/19437/13/3938/119291/5c2db39dE71514644/cb6b1092a27bffa6.jpg'}

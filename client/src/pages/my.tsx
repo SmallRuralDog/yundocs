@@ -8,10 +8,11 @@ import IconInvite from '../assets/images/icon_invite.png'
 
 
 class MyPage extends Component {
-  config = {
+  config: PageConfig = {
     navigationBarTitleText: '我的',
-    navigationStyle: 'custom'
-  } as PageConfig;
+    navigationStyle: 'custom',
+
+  };
 
 
   render() {
