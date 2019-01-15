@@ -4,6 +4,7 @@ import {Image, Progress, Swiper, SwiperItem, Text, View, Navigator} from '@taroj
 import '../assets/styles/index-page.scss'
 import ProgressBar from "../components/ProgressBar";
 import AvatarList from "../components/AvatarList";
+import {AtIcon} from "taro-ui";
 
 class IndexPage extends Component {
   config: PageConfig = {
@@ -84,11 +85,10 @@ class IndexPage extends Component {
         </View>
       </SwiperItem>
     });
-
     return <View className='page index-page '>
       <View className='page-pd'>
-        <View className='search-view'>
-          <Text className='iconfont icon-sousuo text-desc' />
+        <View className='search-view '>
+          <AtIcon prefixClass='icon' value='sousuo' className='ml-10 text-desc' size={18} />
           <Text className='text-desc text-15 ml-10'>PHP从入门到放弃</Text>
         </View>
       </View>

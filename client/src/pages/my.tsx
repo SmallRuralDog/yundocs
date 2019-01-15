@@ -15,7 +15,7 @@ class MyPage extends Component {
   } as PageConfig;
 
   render() {
-    return <View className='page user-page' style={{backgroundImage:`url(${my_page_top_bg})`}}>
+    return <View className='page user-page' style={{backgroundImage: `url(${my_page_top_bg})`}}>
       <NavBar />
       <View className='flex-c page-pd'>
         <View className='flex-1 flex-column '>
@@ -26,7 +26,7 @@ class MyPage extends Component {
           <AtAvatar circle={true} size='large' image={'https://imgavater.ui.cn/avatar/8/3/6/8/8638.jpg'} />
         </View>
         <View className='pl-10 flex-s'>
-          <Text className='iconfont icon-right' style={{fontSize: Taro.pxTransform(32),color:'#d0d0d0'}} />
+          <Text className='icon icon-right' style={{fontSize: Taro.pxTransform(32), color: '#d0d0d0'}} />
         </View>
       </View>
 
@@ -54,10 +54,10 @@ class MyPage extends Component {
 
       <View className='page-pd'>
         <View className='flex-c-sb invite'>
-          <Image mode='aspectFill' className='icon' src={IconInvite} />
+          <Image mode='aspectFill' className='l-icon' src={IconInvite} />
           <Text className='text-13 bold'>邀请好友读书，获得反读书费</Text>
           <View className='r-btn'>
-            <Text className='iconfont icon-right' style={{fontSize: Taro.pxTransform(24)}} />
+            <Text className='icon icon-right' style={{fontSize: Taro.pxTransform(24)}} />
           </View>
         </View>
       </View>
@@ -66,29 +66,29 @@ class MyPage extends Component {
         <View className='flex-c-sb menu-list-item '>
           <View className='flex-c'>
             <Image mode='aspectFill'
-                   className='icon'
+                   className='l-icon'
                    src={'http://img10.360buyimg.com/jdphoto/s72x72_jfs/t5872/209/5240187906/2872/8fa98cd/595c3b2aN4155b931.png'} />
             <Text className='text-15 ml-10 text-default'>阅读报告</Text>
           </View>
-          <Text className='iconfont icon-right' />
+          <Text className='icon icon-right' />
         </View>
         <View className='flex-c-sb menu-list-item '>
           <View className='flex-c'>
             <Image mode='aspectFill'
-                   className='icon'
+                   className='l-icon'
                    src={'https://img12.360buyimg.com/jdphoto/s72x72_jfs/t6160/14/2008729947/2754/7d512a86/595c3aeeNa89ddf71.png'} />
             <Text className='text-15 ml-10 text-default'>收藏书单</Text>
           </View>
-          <Text className='iconfont icon-right' />
+          <Text className='icon icon-right' />
         </View>
         <View className='flex-c-sb menu-list-item '>
           <View className='flex-c'>
             <Image mode='aspectFill'
-                   className='icon'
+                   className='l-icon'
                    src={'http://img12.360buyimg.com/jdphoto/s72x72_jfs/t10660/330/203667368/1672/801735d7/59c85643N31e68303.png'} />
             <Text className='text-15 ml-15 text-default'>好友排名</Text>
           </View>
-          <Text className='iconfont icon-right' />
+          <Text className='icon icon-right' />
         </View>
       </View>
 
