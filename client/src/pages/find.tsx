@@ -35,8 +35,10 @@ class FindPage extends Component<IProps, IState> {
 
   render() {
     const {tabActive} = this.state;
-    return <PageView>
-      <View className='page find-page tabs-page'>
+    return <PageView
+      loading={true}
+    renderHeader={
+      <View>
         <Tabs
           tabs={[
             {name: '推荐'}, {name: '图书'}, {name: '文档'}, {name: '教程'}, {name: '资源'}, {name: '讨论'}
@@ -44,6 +46,11 @@ class FindPage extends Component<IProps, IState> {
           active={tabActive}
           onClick={this.onTabClick}
         />
+      </View>
+    }
+    >
+      <View className='page find-page tabs-page'>
+
         <View>
           {tabActive === 0 && <TabRecommend />}
           {tabActive === 1 && <TabTwo />}
