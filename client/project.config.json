@@ -9,6 +9,7 @@
 		"postcss": false,
 		"minified": false,
 		"newFeature": true,
+		"nodeModules": false,
 		"autoAudits": false
 	},
 	"compileType": "miniprogram",

@@ -33,19 +33,24 @@ class BookCover extends Component<IProps, {}> {
                    width: Taro.pxTransform(width),
                    height: Taro.pxTransform(width * Ratios[ratio - 1])
                  }}>
-      <Image style={{
-        width: Taro.pxTransform(width),
-        height: Taro.pxTransform(width * Ratios[ratio - 1]),
-        borderRadius: Taro.pxTransform(borderRadius || 0),
-        verticalAlign:'middle',
-        display:'flex'
-      }} className={`cover ${shadow && 'cover-box-shadow'}`}
-             mode='aspectFill' src={image} />
+      <Image
+        style={{
+          width: Taro.pxTransform(width),
+          height: Taro.pxTransform(width * Ratios[ratio - 1]),
+          borderRadius: Taro.pxTransform(borderRadius || 0),
+          verticalAlign: 'middle',
+          display: 'flex'
+        }}
+        className={`cover ${shadow && 'cover-box-shadow'}`}
+        mode='aspectFill'
+        src={image}
+        lazyLoad={true}
+      />
       {this.props.children}
     </View>
   }
 }
 
-const Ratios: number[] = [297 / 210, 77 / 137, 128 / 280, 78 / 280, 1,80/108]; //高/宽
+const Ratios: number[] = [297 / 210, 77 / 137, 128 / 280, 78 / 280, 1, 80 / 108]; //高/宽
 
 export default BookCover;

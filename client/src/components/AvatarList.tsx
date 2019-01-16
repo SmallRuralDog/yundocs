@@ -1,14 +1,21 @@
-import Taro, {Component} from "@tarojs/taro";
-import {View, Image} from "@tarojs/components";
+import Taro, { Component } from "@tarojs/taro";
+import { View, Image } from "@tarojs/components";
 import './styles/AvatarList.scss';
 
 // @ts-ignore
 import IconMore from '../assets/images/icon_more.png';
 
-class AvatarList extends Component {
+interface IProps {
+  data: string[]
+}
+
+class AvatarList extends Component<IProps, {}> {
   render() {
+    const { data } = this.props;
     return <View className={'avatar-list'}>
-      <Image mode='aspectFill' className={'avatar-list-avatar'} src={'https://imgavater.ui.cn/avatar/4/0/9/8/118904.jpg'} />
+      {data && data.map((item, index) => {
+        return <Image key={index} mode='aspectFill' className={'avatar-list-avatar'} src={item} />
+      })}
       <Image className={'avatar-list-avatar more'} src={IconMore} />
     </View>
   }
