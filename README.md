@@ -12,7 +12,7 @@
 yarn global add @tarojs/cli
 git clone https://github.com/SmallRuralDog/yundocs.git xxx
 cd xxx
-yanr install
+yarn install
 yarn run dev:weapp
 ```
 `xxx`是你的项目名称，可随意更改
