@@ -31,35 +31,55 @@ interface IProps {
 class FindPage extends Component<IProps, IState> {
   config = {
     navigationBarTitleText: '发现',
-    enablePullDownRefresh:true,
-    backgroundTextStyle:'dark'
+    enablePullDownRefresh: true,
+    backgroundTextStyle: 'dark'
   } as PageConfig;
 
   state: IState = {
     tabActive: 0
   };
 
-  defaultProps = {
+  static defaultProps = {
     find: {
       recommend: {}
     }
   } as IProps;
 
+  componentDidMount() {
+    this.getData();
+  }
+
   onTabClick = (tab: ITab, index: number) => {
     console.log(tab);
     this.setState({
       tabActive: index
+    },()=>{
+      this.getData();
     })
   };
 
-  getLoading = () => {
-    const {loading} = this.props;
-
+  getData = (reload?:boolean) => {
+    const {dispatch, find} = this.props;
     switch (this.state.tabActive) {
       case 0:
-        return loading['find/getRecommend'];
+        (!find.recommend.init || reload) && dispatch({
+          type: 'find/getRecommend'
+        });
+        break;
     }
   };
+
+  getLoading = () => {
+    const {loading, find} = this.props;
+    switch (this.state.tabActive) {
+      case 0:
+        return loading['find/getRecommend'] && !find.recommend.init;
+    }
+  };
+
+  onPullDownRefresh() {
+    this.getData(true);
+  }
 
   render() {
     const {find, dispatch} = this.props;

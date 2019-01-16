@@ -17,7 +17,6 @@ interface IProps {
 
 interface IState {
   current: number;
-  init: boolean;
 }
 
 @connect((store: IStore) => {
@@ -53,7 +52,6 @@ class IndexPage extends Component<IProps, IState> {
       type: 'home/getIndex',
       callback: () => {
         this.setState({
-          init: true,
           current: 0
         })
       }
@@ -73,8 +71,8 @@ class IndexPage extends Component<IProps, IState> {
   };
 
   render() {
-    const {loading, home: {search_tips, recommend_list}} = this.props;
-    const {current, init} = this.state;
+    const {loading, home: {search_tips, recommend_list, init, error}} = this.props;
+    const {current} = this.state;
     const ListItems = recommend_list && recommend_list.map((item, index) => {
       return <SwiperItem key={index} className='swiper-item'>
         <View className={`ds-list-item ${index === 0 ? 'first' : index === list.length - 1 ? 'last' : 'center'}`}>
@@ -108,9 +106,10 @@ class IndexPage extends Component<IProps, IState> {
     });
     return <PageView
       loading={loading && !init}
+      error={error}
       loadText={'加载中'}
     >
-      <View className='page index-page'>
+      {init && <View className='page index-page'>
         <View className='page-pd'>
           <View className='search-view '>
             <AtIcon prefixClass='icon' value='sousuo' className='ml-10 text-desc' size={18} />
@@ -139,7 +138,7 @@ class IndexPage extends Component<IProps, IState> {
           </View>
         </View>
         <View className='page-pd' />
-      </View>
+      </View>}
     </PageView>
   }
 }

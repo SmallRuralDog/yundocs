@@ -10,29 +10,30 @@ interface Interface {
   //类
   className?: string;
   //头部布局
-  renderHeader?:any;
+  renderHeader?: any;
   //底部布局
-  renderFooter?:any;
+  renderFooter?: any;
   //显示加载视图
-  loading?:boolean;
+  loading?: boolean;
   //加载文字
-  loadText?:string;
+  loadText?: string;
+  error?: API.Error;
+  init: boolean;
 }
 
 class PageView extends Component<Interface, {}> {
 
 
-
-
   render() {
-    const {loading,loadText} = this.props;
+    const {loading, loadText, error, init} = this.props;
     return <FlexView direction="column" className={classNames('page-view', this.props.className)}>
       <AtMessage />
       <View className='flex-s'>
         {this.props.renderHeader}
       </View>
       {!loading && this.props.children}
-      {loading && <LoadingView content={loadText}/>}
+      {loading && <LoadingView content={loadText} />}
+      {(error && error.code >= 404 && !init) && <View>网络错误</View>}
       <View className='flex-s'>
         {this.props.renderFooter}
       </View>

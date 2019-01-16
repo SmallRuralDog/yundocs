@@ -29,6 +29,9 @@ interface ICommonStore {
  * 首页状态
  */
 interface IHomeStore {
+  //数据初始化
+  init:boolean;
+  error:API.Error;
   //搜索词
   search_tips: string[];
   //推荐列表
@@ -48,7 +51,12 @@ interface IFindStore {
       cover:string;
     }[],
     //每日推荐
-    day_rec:{}[]
+    day_rec:{
+      id:string;
+      title:string;
+      desc:string;
+      cover:string;
+    }[]
   }
 }
 
@@ -93,6 +101,13 @@ declare namespace API {
   //API接口返回数据
   export interface ResponseData {
     code: number;
+    data: any;
+    status: string;
+  }
+
+  export interface Error {
+    code:number;
+    message:string;
     data: any;
     status: string;
   }
