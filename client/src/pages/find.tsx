@@ -8,23 +8,42 @@ import TabFour from "./find/TabFour";
 import TabFive from "./find/TabFive";
 import TabSix from "./find/TabSix";
 import PageView from "./Page";
+import {connect} from "@tarojs/redux";
 
-interface IProps {
-
-}
 
 interface IState {
   tabActive: number;
 }
 
+interface IProps {
+  find: IFindStore;
+  loading: string[];
+  dispatch: IDispatch
+}
+
+@connect((store: IStore) => {
+  const {loading, find} = store;
+  return {
+    find: find,
+    loading: loading.effects
+  } as IProps
+})
 class FindPage extends Component<IProps, IState> {
   config = {
-    navigationBarTitleText: '发现'
+    navigationBarTitleText: '发现',
+    enablePullDownRefresh:true,
+    backgroundTextStyle:'dark'
   } as PageConfig;
 
   state: IState = {
     tabActive: 0
   };
+
+  defaultProps = {
+    find: {
+      recommend: {}
+    }
+  } as IProps;
 
   onTabClick = (tab: ITab, index: number) => {
     console.log(tab);
@@ -33,26 +52,36 @@ class FindPage extends Component<IProps, IState> {
     })
   };
 
+  getLoading = () => {
+    const {loading} = this.props;
+
+    switch (this.state.tabActive) {
+      case 0:
+        return loading['find/getRecommend'];
+    }
+  };
+
   render() {
+    const {find, dispatch} = this.props;
     const {tabActive} = this.state;
     return <PageView
-      loading={true}
-    renderHeader={
-      <View>
-        <Tabs
-          tabs={[
-            {name: '推荐'}, {name: '图书'}, {name: '文档'}, {name: '教程'}, {name: '资源'}, {name: '讨论'}
-          ]}
-          active={tabActive}
-          onClick={this.onTabClick}
-        />
-      </View>
-    }
+      loading={this.getLoading()}
+      renderHeader={
+        <View>
+          <Tabs
+            tabs={[
+              {name: '推荐'}, {name: '图书'}, {name: '文档'}, {name: '教程'}, {name: '资源'}, {name: '讨论'}
+            ]}
+            active={tabActive}
+            onClick={this.onTabClick}
+          />
+        </View>
+      }
     >
       <View className='page find-page tabs-page'>
 
         <View>
-          {tabActive === 0 && <TabRecommend />}
+          {tabActive === 0 && <TabRecommend find={find} dispatch={dispatch} />}
           {tabActive === 1 && <TabTwo />}
           {tabActive === 2 && <TabThree />}
           {tabActive === 3 && <TabFour />}

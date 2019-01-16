@@ -4,17 +4,32 @@ import './find-tab-page.scss';
 import BookCover from "../../components/BookCover";
 import Grid from "../../components/Grid";
 
-class TabRecommend extends Component {
+interface IProps {
+  find: IFindStore;
+  dispatch: IDispatch
+}
+
+class TabRecommend extends Component<IProps, {}> {
+
 
   componentDidMount() {
+   !this.props.find.recommend.init && this.props.dispatch({
+      type: 'find/getRecommend'
+    })
   }
 
-  render() {
+  static defaultProps = {
+    find: {
+      recommend: {}
+    }
+  } as IProps;
 
-    const Banners = banners.map((item, index) => {
+  render() {
+    const {find: {recommend: {slide_list}}} = this.props;
+    const Banners = slide_list && slide_list.map((item, index) => {
       return <SwiperItem className='banner-item' key={index}>
         <Navigator url={'/pages/details'}>
-          <BookCover image={item} width={690} ratio={3} borderRadius={10} shadow={false} />
+          <BookCover image={item.cover} width={690} ratio={3} borderRadius={10} shadow={false} />
         </Navigator>
       </SwiperItem>
     });
@@ -99,12 +114,6 @@ class TabRecommend extends Component {
   }
 }
 
-const banners = [
-  'http://n.sinaimg.cn/www/459/w890h369/20190107/mvX--hrfcctn5927153.png',
-  'http://n.sinaimg.cn/book/204/w710h294/20181218/yPLQ-hqhtqsq1359585.jpg',
-  'http://n.sinaimg.cn/www/459/w890h369/20181203/fNOY-hphsupx9270049.jpg'
-];
 
 export default TabRecommend;
 
-//280*128

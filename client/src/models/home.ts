@@ -1,26 +1,28 @@
-import { getIndex } from "../services/index";
+import {getIndex} from "../services";
 
 export default {
   namespace: 'home',
   state: {
-    search_tips: []
+    search_tips: [],
+    recommend_list:[]
   },
   effects: {
-    *getIndex(action: IEffectsAction, { select, call, put }) {
-      const { callback } = action;
+    //获取首页数据
+    * getIndex(action: IEffectsAction, {call, put}) {
+      const {callback} = action;
       const response: API.ResponseData = yield call(getIndex)
       yield put({
         type: 'save',
         payload: {
           ...response.data
         }
-      })
+      });
       callback && callback(response)
     }
   },
   reducers: {
-    save(state, { payload }) {
-      return { ...state, ...payload }
+    save(state, {payload}) {
+      return {...state, ...payload}
     },
   },
 

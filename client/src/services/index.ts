@@ -5,3 +5,9 @@ export function getIndex() {
     url: 'index'
   })
 }
+
+export function getFindRecommend() {
+  return api.get({
+    url: 'find-recommend '
+  })
+}

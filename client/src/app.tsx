@@ -18,9 +18,9 @@ class App extends Component {
 
   config: Config = {
     pages: [
-
-      'pages/index',
       'pages/find',
+      'pages/index',
+
       'pages/bookmark',
       'pages/my',
       'pages/details',
@@ -90,11 +90,8 @@ class App extends Component {
   // 请勿修改此函数
   render() {
 
-    return (
-      <Provider store={store}>
-        <Index />
-      </Provider>
-    )
+    // @ts-ignore
+    return (<Provider store={store}><Index /></Provider>)
   }
 }
 
