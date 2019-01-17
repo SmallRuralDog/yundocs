@@ -495,13 +495,19 @@
     line-height: 1;
   }
 
-  error-view {
-    display: flex;
-    flex: 1;
-    align-items: center;
-    justify-content: center;
-  }
 
+
+}
+error-view {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.none-network{
+  background: #FFEEEC;
+  padding: 20px 30px;
 }
 
 

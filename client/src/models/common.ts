@@ -1,7 +1,8 @@
 export default {
   namespace: 'common',
   state: {
-    access_token: '024b12087e6f0d2169c2665a6e127f9b'
+    isConnected: true,
+    networkType: ''
   },
   reducers: {
     save(state, {payload}) {

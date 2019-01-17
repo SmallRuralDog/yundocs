@@ -40,7 +40,10 @@ class FindPage extends Component<IProps, IState> {
 
   static defaultProps = {
     find: {
-      recommend: {}
+      recommend: {},
+      books: {},
+      docs: {},
+      courses: {}
     }
   } as IProps;
 
@@ -65,6 +68,31 @@ class FindPage extends Component<IProps, IState> {
           type: 'find/getRecommend'
         });
         break;
+      case 1:
+        (!find.books.init || reload) && dispatch({
+          type: 'find/getBooks'
+        });
+        break;
+      case 2:
+        (!find.docs.init || reload) && dispatch({
+          type: 'find/getDocs'
+        });
+        break;
+      case 3:
+        (!find.courses.init || reload) && dispatch({
+          type: 'find/getCourses'
+        });
+        break;
+      case 4:
+        (!find.resources.init || reload) && dispatch({
+          type: 'find/getResources'
+        });
+        break;
+      case 5:
+        (!find.voices.init || reload) && dispatch({
+          type: 'find/getVoices'
+        });
+        break;
     }
   };
 
@@ -73,14 +101,25 @@ class FindPage extends Component<IProps, IState> {
     switch (this.state.tabActive) {
       case 0:
         return loading['find/getRecommend'] && !find.recommend.init;
+      case 1:
+        return loading['find/getBooks'] && !find.books.init;
+      case 2:
+        return loading['find/getDocs'] && !find.docs.init;
+      case 3:
+        return loading['find/getCourses'] && !find.courses.init;
+      case 4:
+        return loading['find/getResources'] && !find.resources.init;
+      case 5:
+        return loading['find/getVoices'] && !find.voices.init;
     }
+    return false;
   };
 
   onPullDownRefresh() {
     this.getData(true);
   }
 
-  onReload = ()=>{
+  onReload = () => {
     this.getData(true)
   };
 
@@ -90,7 +129,7 @@ class FindPage extends Component<IProps, IState> {
     return <View className='page find-page tabs-page'>
       <Tabs
         tabs={[
-          {name: '推荐'}, {name: '图书'}, {name: '文档'}, {name: '教程'}, {name: '资源'}, {name: '讨论'}
+          {name: '推荐'}, {name: '图书'}, {name: '文档'}, {name: '教程'}, {name: '资源'}, {name: '听书'}
         ]}
         active={tabActive}
         onClick={this.onTabClick}
@@ -98,11 +137,16 @@ class FindPage extends Component<IProps, IState> {
 
       {tabActive === 0 && <TabRecommend find={find} dispatch={dispatch} loading={this.getLoading()}
                                         onReload={this.onReload.bind(this)} />}
-      {tabActive === 1 && <TabTwo />}
-      {tabActive === 2 && <TabThree />}
-      {tabActive === 3 && <TabFour />}
-      {tabActive === 4 && <TabFive />}
-      {tabActive === 5 && <TabSix />}
+      {tabActive === 1 && <TabTwo find={find} dispatch={dispatch} loading={this.getLoading()}
+                                  onReload={this.onReload.bind(this)} />}
+      {tabActive === 2 && <TabThree find={find} dispatch={dispatch} loading={this.getLoading()}
+                                    onReload={this.onReload.bind(this)} />}
+      {tabActive === 3 && <TabFour find={find} dispatch={dispatch} loading={this.getLoading()}
+                                   onReload={this.onReload.bind(this)} />}
+      {tabActive === 4 && <TabFive find={find} dispatch={dispatch} loading={this.getLoading()}
+                                   onReload={this.onReload.bind(this)} />}
+      {tabActive === 5 && <TabSix find={find} dispatch={dispatch} loading={this.getLoading()}
+                                  onReload={this.onReload.bind(this)}/>}
 
     </View>
   }

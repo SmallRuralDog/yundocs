@@ -75,6 +75,26 @@ class App extends Component {
       index: 3,
       text: '100'
     })*/
+
+    Taro.getNetworkType().then(res => {
+      store.dispatch({
+        type: 'common/save',
+        payload: {
+          isConnected: res.networkType != 'none',
+          networkType: res.networkType
+        }
+      })
+    });
+
+    Taro.onNetworkStatusChange((res) => {
+
+      store.dispatch({
+        type: 'common/save',
+        payload: {
+          ...res
+        }
+      })
+    })
   }
 
   componentDidShow() {

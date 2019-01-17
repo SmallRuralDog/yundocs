@@ -64,6 +64,10 @@ class IndexPage extends Component<IProps, IState> {
     })
   };
 
+  onReload = ()=>{
+    this.getData()
+  }
+
   onItemClick = () => {
     Taro.navigateTo({
       url: '/pages/details'
@@ -108,7 +112,7 @@ class IndexPage extends Component<IProps, IState> {
       loading={loading && !init}
       error={error}
       init={init}
-      loadText={'加载中'}
+      onReload={this.onReload.bind(this)}
     >
       {init && <View className='page index-page'>
         <View className='page-pd'>

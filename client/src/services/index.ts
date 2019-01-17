@@ -11,3 +11,31 @@ export function getFindRecommend() {
     url: 'find-recommend'
   })
 }
+
+export function getFindBooks() {
+  return api.get({
+    url: 'find-books'
+  })
+}
+
+export function getFindDocs() {
+  return api.get({
+    url: 'find-docs'
+  })
+}
+
+export function getFindCourses() {
+  return api.get({
+    url: 'find-course'
+  })
+}
+export function getFindResources() {
+  return api.get({
+    url: 'find-resource'
+  })
+}
+export function getFindVoices() {
+  return api.get({
+    url: 'find-voice'
+  })
+}

@@ -22,7 +22,10 @@ interface IStore {
  * 公共状态
  */
 interface ICommonStore {
-
+  //当前是否有网络连接
+  isConnected: boolean;
+  //网络类型
+  networkType: 'wifi' | '2g' | '3g' | '4g' | '5g' | 'unknown' | 'none';
 }
 
 /**
@@ -60,6 +63,167 @@ interface IFindStore {
       cover: string;
     }[]
   };
+  books: {
+    //数据初始化
+    init: boolean;
+    error: API.Error;
+    //
+    banner_list: {
+      id: string;
+      title: string;
+      cover: string;
+    }[];
+    //推荐列表
+    rec_list: {
+      id: string;
+      title: string;
+      desc: string;
+      cover: string;
+      read_count: number;
+      user: string;
+      grade: number;
+    }[];
+    //分页列表
+    page_list: {
+      id: string;
+      title: string;
+      desc: string;
+      cover: string;
+      read_count: number;
+      tags: string[];
+      user: string;
+      price: number;
+      grade: number;
+    }[]
+  },
+  docs: {
+    //数据初始化
+    init: boolean;
+    error: API.Error;
+    //
+    banner: {
+      id: string;
+      title: string;
+      cover: string;
+    };
+    //推荐列表
+    rec_list: {
+      id: string;
+      title: string;
+      desc: string;
+      cover: string;
+      read_count: number;
+      user: string;
+      grade: number;
+    }[];
+    //分页列表
+    page_list: {
+      id: string;
+      title: string;
+      desc: string;
+      cover: string;
+      read_count: number;
+      tags: string[];
+      user: string;
+      price: number;
+      grade: number;
+    }[]
+  },
+  courses: {
+    //数据初始化
+    init: boolean;
+    error: API.Error;
+    //
+    slide_list: {
+      id: string;
+      title: string;
+      cover: string;
+    }[];
+    //推荐列表
+    rec_users: {
+      id: string;
+      avatar:string;
+      name:string;
+    }[];
+    //分页列表
+    page_list: {
+      id: string;
+      title: string;
+      desc: string;
+      cover: string;
+      read_count: number;
+      tags: string[];
+      user: string;
+      price: number;
+      grade: number;
+    }[]
+  },
+  resources: {
+    //数据初始化
+    init: boolean;
+    error: API.Error;
+    //
+    banner: {
+      id: string;
+      title: string;
+      cover: string;
+    };
+    //推荐列表
+    rec_list: {
+      id: string;
+      title: string;
+      desc: string;
+      cover: string;
+      read_count: number;
+      user: string;
+      grade: number;
+    }[];
+    //分页列表
+    page_list: {
+      id: string;
+      title: string;
+      desc: string;
+      cover: string;
+      read_count: number;
+      tags: string[];
+      user: string;
+      price: number;
+      grade: number;
+    }[]
+  },
+  voices: {
+    //数据初始化
+    init: boolean;
+    error: API.Error;
+    //
+    banner: {
+      id: string;
+      title: string;
+      desc: string;
+      cover: string;
+      read_count: number;
+      user: string;
+      grade: number;
+    };
+    //推荐列表
+    rec_users: {
+      id: string;
+      avatar:string;
+      name:string;
+    }[];
+    //分页列表
+    page_list: {
+      id: string;
+      title: string;
+      desc: string;
+      cover: string;
+      read_count: number;
+      tags: string[];
+      user: string;
+      price: number;
+      grade: number;
+    }[]
+  },
 }
 
 /***********************************************************************************************************************/

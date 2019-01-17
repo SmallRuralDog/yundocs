@@ -49,16 +49,15 @@ function checkSuccess(data: any) {
 
 /**
  * 请求错误处理
- * @param error
- */
-function throwError(error) {
-  Taro.hideNavigationBarLoading();
-  Taro.hideNavigationBarLoading();
-  if (error.errMsg) {
 
-    throw new Error('服务器正在维护中!')
-  }
-  throw error
+ */
+function throwError(err) {
+  Taro.hideNavigationBarLoading();
+  Taro.hideNavigationBarLoading();
+  const error: any = new Error(err.errMsg || '服务器正在维护中!');
+  error.code = 500;
+  throw error;
+
 }
 
 export default {
@@ -77,6 +76,7 @@ export default {
         return checkSuccess(res)
       })
       .catch(error => {
+
         throwError(error)
       })
 
