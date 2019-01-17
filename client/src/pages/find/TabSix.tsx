@@ -40,7 +40,6 @@ class TabSix extends Component<IProps, {}> {
       onReload={onReload}
       loading={loading}>
       <View className={'tab-six'}>
-
         {banner && <View className='page-pd'>
           <Navigator url={'/pages/details'} className='p-10 mt-10 radius shadow-small'>
             <BookRow coverWidth={170} coverRatio={1} coverBorderRadius={5} image={banner.cover}
