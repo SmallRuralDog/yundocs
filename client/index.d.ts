@@ -253,6 +253,19 @@ declare namespace IModel {
     progress: number;
     users: string[];
   }
+
+  export interface Book
+  {
+    id: string;
+    title: string;
+    desc: string;
+    cover: string;
+    read_count: number;
+    tags: string[];
+    user: string;
+    price: number;
+    grade: number;
+  }
 }
 /***********************************************************************************************************************/
 declare namespace API {

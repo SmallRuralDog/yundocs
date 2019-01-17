@@ -39,3 +39,9 @@ export function getFindVoices() {
     url: 'find-voice'
   })
 }
+
+export function getDetail() {
+  return api.get({
+    url: 'detail'
+  })
+}
