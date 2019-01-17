@@ -8,6 +8,6 @@ export function getIndex() {
 
 export function getFindRecommend() {
   return api.get({
-    url: 'find-recommend '
+    url: 'find-recommend'
   })
 }

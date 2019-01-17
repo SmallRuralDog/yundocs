@@ -75,7 +75,7 @@ class IndexPage extends Component<IProps, IState> {
     const {current} = this.state;
     const ListItems = recommend_list && recommend_list.map((item, index) => {
       return <SwiperItem key={index} className='swiper-item'>
-        <View className={`ds-list-item ${index === 0 ? 'first' : index === list.length - 1 ? 'last' : 'center'}`}>
+        <View className={`ds-list-item ${index === 0 ? 'first' : index === recommend_list.length - 1 ? 'last' : 'center'}`}>
           <Navigator url={'/pages/details'} className='cover'>
             <BookCover image={item.cover} width={440} ratio={1} borderRadius={10} />
           </Navigator>
@@ -107,6 +107,7 @@ class IndexPage extends Component<IProps, IState> {
     return <PageView
       loading={loading && !init}
       error={error}
+      init={init}
       loadText={'加载中'}
     >
       {init && <View className='page index-page'>
@@ -143,26 +144,5 @@ class IndexPage extends Component<IProps, IState> {
   }
 }
 
-const list = [
-  {
-    img: 'http://makefriends.bs2dl.yy.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190110122111.png',
-    title: '儿童植物大全',
-    desc: '适合中小学儿童阅读的科普类图书，五大主题内容，十分全面的讲解了自然界的植物。'
-  },
-  {
-    img: 'http://makefriends.bs2dl.yy.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190110122146.png',
-    title: '儿童植物大全',
-    desc: '适合中小学儿童阅读的科普类图书，五大主题内容，十分全面的讲解了自然界的植物。'
-  },
-  {
-    img: 'http://makefriends.bs2dl.yy.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190110114209.png',
-    title: '儿童植物大全',
-    desc: '适合中小学儿童阅读的科普类图书，五大主题内容，十分全面的讲解了自然界的植物。'
-  },
-  {
-    img: 'http://makefriends.bs2dl.yy.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190110122416.png',
-    title: '儿童植物大全',
-    desc: '适合中小学儿童阅读的科普类图书，五大主题内容，十分全面的讲解了自然界的植物。'
-  }];
 
 export default IndexPage

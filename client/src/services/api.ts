@@ -20,6 +20,7 @@ function checkHttpStatus(response: API.Response) {
   const message = HTTP_ERROR[response.statusCode] || `ERROR CODE: ${response.statusCode}`
   const error: any = new Error(message);
   error.data = response.data;
+  error.text = message;
   error.code = response.statusCode;
   throw  error
 }
@@ -38,9 +39,10 @@ function checkSuccess(data: any) {
   ) {
     return data
   }
-
-  const error: any = new Error(data.message || '服务端返回异常');
+  const message = data.message || '服务器异常';
+  const error: any = new Error(message);
   error.data = data;
+  error.text = data;
   error.code = data.code;
   throw error
 }

@@ -30,8 +30,8 @@ interface ICommonStore {
  */
 interface IHomeStore {
   //数据初始化
-  init:boolean;
-  error:API.Error;
+  init: boolean;
+  error: API.Error;
   //搜索词
   search_tips: string[];
   //推荐列表
@@ -39,25 +39,27 @@ interface IHomeStore {
 }
 
 interface IFindStore {
+
   //发现推荐页
-  recommend:{
+  recommend: {
     //数据初始化
-    init:boolean;
+    init: boolean;
+    error: API.Error;
     //幻灯片
-    slide_list:{
+    slide_list: {
       //ID
-      id:string;
+      id: string;
       //封面
-      cover:string;
+      cover: string;
     }[],
     //每日推荐
-    day_rec:{
-      id:string;
-      title:string;
-      desc:string;
-      cover:string;
+    day_rec: {
+      id: string;
+      title: string;
+      desc: string;
+      cover: string;
     }[]
-  }
+  };
 }
 
 /***********************************************************************************************************************/
@@ -105,9 +107,9 @@ declare namespace API {
     status: string;
   }
 
-  export interface Error {
-    code:number;
-    message:string;
+  export interface Error extends ErrorConstructor {
+    code: number;
+    text: string;
     data: any;
     status: string;
   }

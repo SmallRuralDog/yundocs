@@ -4,16 +4,17 @@ import '../assets/styles/common.scss';
 import './styles/FlexView.scss';
 import {CSSProperties} from "react";
 
-interface Interface {
+
+interface IProps {
   //样式
   className?: string;
-  align?: 'center' | 'baseline' | 'flex-end' | 'flex-start',
-  justify?: 'center' | 'space-between' | 'flex-end' | 'flex-start',
-  direction?: 'row' | 'column',
-  style?: string | CSSProperties
+  align?: 'center' | 'baseline' | 'flex-end' | 'flex-start';
+  justify?: 'center' | 'space-between' | 'flex-end' | 'flex-start';
+  direction?: 'row' | 'column';
+  style?: string | CSSProperties;
 }
 
-class FlexView extends Component<Interface, {}> {
+class FlexView extends Component<IProps, {}> {
 
 
   render() {
@@ -22,8 +23,7 @@ class FlexView extends Component<Interface, {}> {
                  style={{
                    alignItems: align || 'stretch',
                    justifyContent: justify || 'flex-start',
-                   flexDirection: direction || 'row',
-
+                   flexDirection: direction || 'row'
                  }}>{this.props.children}</View>
   }
 }

@@ -7,7 +7,6 @@ import TabThree from "./find/TabThree";
 import TabFour from "./find/TabFour";
 import TabFive from "./find/TabFive";
 import TabSix from "./find/TabSix";
-import PageView from "./Page";
 import {connect} from "@tarojs/redux";
 
 
@@ -53,12 +52,12 @@ class FindPage extends Component<IProps, IState> {
     console.log(tab);
     this.setState({
       tabActive: index
-    },()=>{
+    }, () => {
       this.getData();
     })
   };
 
-  getData = (reload?:boolean) => {
+  getData = (reload?: boolean) => {
     const {dispatch, find} = this.props;
     switch (this.state.tabActive) {
       case 0:
@@ -81,35 +80,31 @@ class FindPage extends Component<IProps, IState> {
     this.getData(true);
   }
 
+  onReload = ()=>{
+    this.getData(true)
+  };
+
   render() {
     const {find, dispatch} = this.props;
     const {tabActive} = this.state;
-    return <PageView
-      loading={this.getLoading()}
-      renderHeader={
-        <View>
-          <Tabs
-            tabs={[
-              {name: '推荐'}, {name: '图书'}, {name: '文档'}, {name: '教程'}, {name: '资源'}, {name: '讨论'}
-            ]}
-            active={tabActive}
-            onClick={this.onTabClick}
-          />
-        </View>
-      }
-    >
-      <View className='page find-page tabs-page'>
+    return <View className='page find-page tabs-page'>
+      <Tabs
+        tabs={[
+          {name: '推荐'}, {name: '图书'}, {name: '文档'}, {name: '教程'}, {name: '资源'}, {name: '讨论'}
+        ]}
+        active={tabActive}
+        onClick={this.onTabClick}
+      />
 
-        <View>
-          {tabActive === 0 && <TabRecommend find={find} dispatch={dispatch} />}
-          {tabActive === 1 && <TabTwo />}
-          {tabActive === 2 && <TabThree />}
-          {tabActive === 3 && <TabFour />}
-          {tabActive === 4 && <TabFive />}
-          {tabActive === 5 && <TabSix />}
-        </View>
-      </View>
-    </PageView>
+      {tabActive === 0 && <TabRecommend find={find} dispatch={dispatch} loading={this.getLoading()}
+                                        onReload={this.onReload.bind(this)} />}
+      {tabActive === 1 && <TabTwo />}
+      {tabActive === 2 && <TabThree />}
+      {tabActive === 3 && <TabFour />}
+      {tabActive === 4 && <TabFive />}
+      {tabActive === 5 && <TabSix />}
+
+    </View>
   }
 }
 

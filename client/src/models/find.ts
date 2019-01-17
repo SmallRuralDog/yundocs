@@ -3,25 +3,35 @@ import {getFindRecommend} from "../services";
 export default {
   namespace: 'find',
   state: {
-    recommend:{
-
-    }
+    recommend: {}
   },
   effects: {
+    //获取发现页推荐数据
     * getRecommend(action: IEffectsAction, {call, put}) {
       const {callback} = action;
-      const res: API.ResponseData = yield call(getFindRecommend);
-      yield put({
-        type: 'save',
-        payload: {
-          recommend: {
-            init:true,
-            ...res.data
+      try {
+        const res: API.ResponseData = yield call(getFindRecommend);
+        yield put({
+          type: 'save',
+          payload: {
+            recommend: {
+              init: true,
+              ...res.data
+            }
           }
-        }
-      });
-
-      callback && callback(res.code === 200)
+        });
+        callback && callback(res.code === 200)
+      } catch (e) {
+        //请求失败处理
+        yield put({
+          type: 'save',
+          payload: {
+            recommend: {
+              error: e
+            }
+          }
+        });
+      }
     }
   },
   reducers: {
