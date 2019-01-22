@@ -18,9 +18,8 @@ yarn run dev:weapp
 `xxx`是你的项目名称，可随意更改
 
 
-## 已完成页面截图
-
-![](http://makefriends.bs2dl.yy.com/%E6%9C%AA%E5%91%BD%E5%90%8D_meitu_0.jpg)
+## 示例
+![gh_52a837af05b4_258](https://user-images.githubusercontent.com/5151848/51515491-ed5ba780-1e4e-11e9-8af1-c53dc1827818.jpg)
 
 
 
